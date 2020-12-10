@@ -13,6 +13,12 @@ const outOfRange10and20 = list.filter((number) => number < 10 || number > 20);
 console.log(`Existem ${between10and20.length} números entre 10 e 20, de forma inclusiva.`);
 console.log(`Existem ${outOfRange10and20.length} números fora do intervalo entre 10 e 20.`);
 
+//Console result:
+// Existem 6 números entre 10 e 20, de forma inclusiva.
+// Existem 4 números fora do intervalo entre 10 e 20.
+
+//----------------------------------------------
+
 /**
  * Questão 02
  * 
@@ -31,6 +37,11 @@ function multiplyLists(list1, list2){
   const list = listA.map((number, index) => (listB[index] * number));
   return list;
 }
+
+//Console result:
+// [ 11, 24, 39, 56, 75, 96, 119, 144, 171, 200 ]
+
+//----------------------------------------------
 
 /**
  * Questão 03
@@ -59,3 +70,6 @@ function createEvenOddList(list1, list2, listLength){
 }
 
 console.log(evenOddList);
+
+//Console result:
+// [ 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19, 10, 20 ]
