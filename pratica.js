@@ -1,5 +1,5 @@
 /**
- * Questão 01
+ * Question 01
  * 
  * Crie um lista com 10 valores e escreva quantos
  * desses valores lidos estão no intervalo [10,20]
@@ -20,7 +20,7 @@ console.log(`Existem ${outOfRange10and20.length} números fora do intervalo entr
 //----------------------------------------------
 
 /**
- * Questão 02
+ * Question 02
  * 
  * Faça um programa que leia uma lista A e uma
  * lista B de inteiros de 10 posições. Depois gere
@@ -44,7 +44,7 @@ function multiplyLists(list1, list2){
 //----------------------------------------------
 
 /**
- * Questão 03
+ * Question 03
  * 
  * Crie duas listas de 10 posições e crie uma
  * terceira lista contendo, nas posições pares os
@@ -73,3 +73,27 @@ console.log(evenOddList);
 
 //Console result:
 // [ 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19, 10, 20 ]
+
+/**
+ * Question 03 trying another solution - recursivity
+*/
+
+const recursiveList = [];
+
+const recursiveSolution = (length) => (index) => {
+  if((length % 2) === 0){
+    recursiveList.push(listA[index]);
+  }else{
+    recursiveList.push(listB[index]);
+    index++;
+  }
+  if(length >= 20 || index >= 10){
+    return;
+  }else{
+    recursiveSolution(++length)(index);
+  }
+}
+
+recursiveSolution(0)(0);
+
+console.log(recursiveList);
