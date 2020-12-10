@@ -74,17 +74,21 @@ console.log(evenOddList);
 //Console result:
 // [ 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19, 10, 20 ]
 
+//----------------------------------------------
+
 /**
  * Question 03 trying another solution - recursivity
 */
 
+const listRecursiveA = [12, 32, 44, 1, 6, 76, 5, 99, 43, 0];
+const listRecursiveB = [101, 142, 133, 142, 135, 146, 157, 158, 197, 207];
 const recursiveList = [];
 
 const recursiveSolution = (length) => (index) => {
   if((length % 2) === 0){
-    recursiveList.push(listA[index]);
+    recursiveList.push(listRecursiveA[index]);
   }else{
-    recursiveList.push(listB[index]);
+    recursiveList.push(listRecursiveB[index]);
     index++;
   }
   if(length >= 20 || index >= 10){
@@ -97,3 +101,6 @@ const recursiveSolution = (length) => (index) => {
 recursiveSolution(0)(0);
 
 console.log(recursiveList);
+
+//Console result:
+// [ 12, 101, 32, 142, 44, 133, 1, 142, 6, 135, 76, 146, 5, 157, 99, 158, 43, 197, 0, 207 ]
