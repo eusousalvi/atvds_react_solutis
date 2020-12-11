@@ -104,3 +104,19 @@ console.log(recursiveList);
 
 //Console result:
 // [ 12, 101, 32, 142, 44, 133, 1, 142, 6, 135, 76, 146, 5, 157, 99, 158, 43, 197, 0, 207 ]
+
+//----------------------------------------------
+
+/**
+ * Question 03 trying another solution - simplicity
+*/
+const listSimpleA = [1, 3, 4, 2, 6, 7, 5, 9, 8, 0];
+const listSimpleB = [21, 42, 33, 24, 13, 46, 57, 18, 97, 27];
+const listSimpleC = [];
+
+for(let i = 0; i < 10; i++){
+  listSimpleC.push(listSimpleA[i]);
+  listSimpleC.push(listSimpleB[i]);
+}
+
+console.log(listSimpleC);
