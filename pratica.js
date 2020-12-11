@@ -120,3 +120,6 @@ for(let i = 0; i < 10; i++){
 }
 
 console.log(listSimpleC);
+
+//Console result:
+// [ 1, 21, 3, 42, 4, 33, 2, 24, 6, 13, 7, 46, 5, 57, 9, 18, 8, 97, 0, 27 ]
