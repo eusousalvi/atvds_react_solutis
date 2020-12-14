@@ -1,6 +1,6 @@
-/**
- * Exemple 01
- */
+// /**
+//  * Exemple 01
+//  */
 
 function fazRequisicao() {
   return new Promise((resolve, reject) => {
@@ -47,23 +47,23 @@ fazRequisicao()
 
 // const { default: fetch } = require("node-fetch");
 fetch = require("node-fetch");
-let cepBuscado;
-console.log("Buscando CEP");
-cepBuscado = buscarCep("13845373");
-console.log("CEP Buscado");
-console.log("CEP encontrado: ", cepBuscado);
+// let cepBuscado;
+// console.log("Buscando CEP");
+// cepBuscado = buscarCep("13845373");
+// console.log("CEP Buscado");
+// console.log("CEP encontrado: ", cepBuscado);
 
-function buscarCep(parametro){
-  let cep;
-  fetch(`https://viacep.com.br/ws/${parametro}/json/`)
-    .then(response => response.json())
-    .then(data => {
-      cep = data.cep;
-      console.log('CEP encontrado: ', cep);
-    })
-    .catch(console.error);
-    return cep;
-}
+// function buscarCep(parametro){
+//   let cep;
+//   fetch(`https://viacep.com.br/ws/${parametro}/json/`)
+//     .then(response => response.json())
+//     .then(data => {
+//       cep = data.cep;
+//       console.log('CEP encontrado: ', cep);
+//     })
+//     .catch(console.error);
+//     return cep;
+// }
 
 // Console Response
 // Buscando CEP
@@ -82,12 +82,14 @@ getUser(1);
 async function getUser(id){
   console.log('Iniciando requisição...');
   try{
-    const response = await fetch(`https://reqress.in/api/user/${id}`);
+    const response = await fetch(`https://reqres.in/api/user/${id}`);
     console.log('Tratando os dados recebidos...');
     const user = await response.json();
     console.log(`Olá ${user.data.name}, bem vindo a Matrix.`);
   }catch(err){
     console.log('Erro durante a solicitação :', err);
+  }finally{
+    console.log('Requisição Finalizada.')
   }
 
 }
@@ -96,6 +98,7 @@ async function getUser(id){
 // Iniciando requisição...
 // Tratando os dados recebidos...
 // Olá cerulean, bem vindo a Matrix.
+// Requisição Finalizada.
 
 // Console Response - Error (id = 1)
 // Iniciando requisição...
