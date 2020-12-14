@@ -15,7 +15,8 @@ function fazRequisicao() {
 fazRequisicao()
   .then(console.log)
   .catch(console.log)
-  .finally(console.log("Finalizando..."))
+  // .finally(console.log("Finalizando..."))
+  .finally(() => console.log("Finalizando..."))
 
 // Console Response - Resolve
 // Finalizando...
@@ -33,6 +34,10 @@ fazRequisicao()
 //     at tryOnTimeout (timers.js:300:5)
 //     at listOnTimeout (timers.js:263:5)
 //     at Timer.processTimers (timers.js:223:10) (After 5s)
+
+// Console Response - Resolve (With Callback)
+// Promise resolvida (After 5s)
+// Finalizando...
 
 //----------------
 
