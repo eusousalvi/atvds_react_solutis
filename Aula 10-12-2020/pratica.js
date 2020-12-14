@@ -1,6 +1,6 @@
 /**
  * Question 01
- * 
+ *
  * Crie um lista com 10 valores e escreva quantos
  * desses valores lidos estão no intervalo [10,20]
  * (inlcuindo os valores 10 e 20 no intervalo) e
@@ -10,8 +10,12 @@
 const list = [10, 20, 25, 13, 15, 3, 12, 22, 11, 45];
 const between10and20 = list.filter((number) => number >= 10 && number <= 20);
 const outOfRange10and20 = list.filter((number) => number < 10 || number > 20);
-console.log(`Existem ${between10and20.length} números entre 10 e 20, de forma inclusiva.`);
-console.log(`Existem ${outOfRange10and20.length} números fora do intervalo entre 10 e 20.`);
+console.log(
+  `Existem ${between10and20.length} números entre 10 e 20, de forma inclusiva.`,
+);
+console.log(
+  `Existem ${outOfRange10and20.length} números fora do intervalo entre 10 e 20.`,
+);
 
 //Console result:
 // Existem 6 números entre 10 e 20, de forma inclusiva.
@@ -21,20 +25,20 @@ console.log(`Existem ${outOfRange10and20.length} números fora do intervalo entr
 
 /**
  * Question 02
- * 
+ *
  * Faça um programa que leia uma lista A e uma
  * lista B de inteiros de 10 posições. Depois gere
  * uma lista C que será o produto dos valores
  * correspondentes dos vetores A e B.
-*/
+ */
 
 const listA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const listB = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 const listC = multiplyLists(listA, listB);
 console.log(listC);
 
-function multiplyLists(list1, list2){
-  const list = listA.map((number, index) => (listB[index] * number));
+function multiplyLists(list1, list2) {
+  const list = listA.map((number, index) => listB[index] * number);
   return list;
 }
 
@@ -45,7 +49,7 @@ function multiplyLists(list1, list2){
 
 /**
  * Question 03
- * 
+ *
  * Crie duas listas de 10 posições e crie uma
  * terceira lista contendo, nas posições pares os
  * valores do primeira lista e nas posições
@@ -54,13 +58,13 @@ function multiplyLists(list1, list2){
 
 const evenOddList = createEvenOddList(listA, listB, 20);
 
-function createEvenOddList(list1, list2, listLength){
+function createEvenOddList(list1, list2, listLength) {
   let list = [];
   let index = 0;
-  for(let i = 0; i < listLength; i++){
-    if((i % 2) === 0){
+  for (let i = 0; i < listLength; i++) {
+    if (i % 2 === 0) {
       list.push(list1[index]);
-    }else{
+    } else {
       list.push(list2[index]);
       index++;
     }
@@ -78,25 +82,25 @@ console.log(evenOddList);
 
 /**
  * Question 03 trying another solution - recursivity
-*/
+ */
 
 const listRecursiveA = [12, 32, 44, 1, 6, 76, 5, 99, 43, 0];
 const listRecursiveB = [101, 142, 133, 142, 135, 146, 157, 158, 197, 207];
 const recursiveList = [];
 
 const recursiveSolution = (length) => (index) => {
-  if((length % 2) === 0){
+  if (length % 2 === 0) {
     recursiveList.push(listRecursiveA[index]);
-  }else{
+  } else {
     recursiveList.push(listRecursiveB[index]);
     index++;
   }
-  if(length >= 20 || index >= 10){
+  if (length >= 20 || index >= 10) {
     return;
-  }else{
+  } else {
     recursiveSolution(++length)(index);
   }
-}
+};
 
 recursiveSolution(0)(0);
 
@@ -109,12 +113,12 @@ console.log(recursiveList);
 
 /**
  * Question 03 trying another solution - simplicity
-*/
+ */
 const listSimpleA = [1, 3, 4, 2, 6, 7, 5, 9, 8, 0];
 const listSimpleB = [21, 42, 33, 24, 13, 46, 57, 18, 97, 27];
 const listSimpleC = [];
 
-for(let i = 0; i < 10; i++){
+for (let i = 0; i < 10; i++) {
   listSimpleC.push(listSimpleA[i]);
   listSimpleC.push(listSimpleB[i]);
 }
