@@ -1,0 +1,8 @@
+{
+  "name": "Javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gabriel-codes/atvds_react_solutis.git",
+  "author": "gabriel-codes <gabrielss@outlook.com>",
+  "license": "MIT"
+}
