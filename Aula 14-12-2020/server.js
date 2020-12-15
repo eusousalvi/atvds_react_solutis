@@ -1,20 +1,23 @@
 const express = require('express');
-require('dotenv').config()
+require('dotenv').config();
 const ObjectId = require('mongodb').ObjectID;
 const MongoClient = require('mongodb').MongoClient;
 
-console.log(process.env.DB_LOGIN);
 const uri = `mongodb+srv://${process.env.DB_LOGIN}:${process.env.DB_PASS}@clustersolutiscourse.vamb7.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 let db;
 
-MongoClient.connect(uri, (err, client) => {
-  if (err) return console.log(err);
-  db = client.db(process.env.DB_NAME);
+MongoClient.connect(
+  uri,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (err, client) => {
+    if (err) return console.log(err);
+    db = client.db(process.env.DB_NAME);
 
-  app.listen(3000, () => {
-    console.log('Server running on port 3000');
-  });
-});
+    app.listen(3000, () => {
+      console.log('Server running on port 3000');
+    });
+  },
+);
 
 const app = express();
 
