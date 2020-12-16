@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>My CRUD in NodeJS</title>
-</head>
-
-<body>
-
-  <h2>Registros</h2>
+<%- contentFor('body') %>
+  <h2>Registros de Usuários</h2>
   <table border="1">
     <thead>
       <tr>
@@ -26,12 +17,9 @@
           <td>
             <%= details.surname %>
           </td>
-          <td><a href="/edit/<%= details._id %>">Editar</a> - <a href="/delete/<%= details._id %>">Deletar</a></td>
+          <td><a href="/user/edit/<%= details._id %>">Editar</a> - <a href="/user/delete/<%= details._id %>">Deletar</a></td>
         </tr>
         <% }) %>
     </tbody>
   </table>
   <button><a href="/">Novo</a></button>
-</body>
-
-</html>

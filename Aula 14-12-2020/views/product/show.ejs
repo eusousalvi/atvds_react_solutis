@@ -1,0 +1,25 @@
+<%- contentFor('body') %>
+  <h2>Registros de Produtos</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>Nome</td>
+        <td>Preço</td>
+        <td>Ação</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(details) { %>
+        <tr>
+          <td>
+            <%= details.name %>
+          </td>
+          <td>
+            <%= details.price %>
+          </td>
+          <td><a href="/product/edit/<%= details._id %>">Editar</a> - <a href="/product/delete/<%= details._id %>">Deletar</a></td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+  <button><a href="/product">Novo</a></button>
